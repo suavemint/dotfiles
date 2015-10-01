@@ -1,0 +1,113 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> gf <Plug>RailsTabFind
+nnoremap <buffer> <silent>  :Bsplit   
+nmap <buffer> f <Plug>RailsSplitFind
+nmap <buffer> gf <Plug>RailsFind
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal autoindent
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=%+GCould\ not\ find\ gem\ '%.%#,%+E%f:%l:\ parse\ error,%W%f:%l:\ warning:\ %m,%E%f:%l:in\ %*[^:]:\ %m,%E%f:%l:\ %m,%-C%tfrom\ %f:%l:in\ %.%#,%-Z%tfrom\ %f:%l,%-Z%p^,%-G%.%#
+setlocal expandtab
+if &filetype != 'gemfilelock'
+setlocal filetype=gemfilelock
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-,.
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=bundle
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=syntaxcomplete#Complete
+setlocal path=.,~/Source/test_audience/lib,~/Source/test_audience/vendor,~/Source/test_audience/app/models/concerns,~/Source/test_audience/app/controllers/concerns,~/Source/test_audience/app/controllers,~/Source/test_audience/app/helpers,~/Source/test_audience/app/mailers,~/Source/test_audience/app/models,~/Source/test_audience/app/*,~/Source/test_audience/app/views,~/Source/test_audience/test,~/Source/test_audience/test/unit,~/Source/test_audience/test/functional,~/Source/test_audience/test/integration,~/Source/test_audience/test/controllers,~/Source/test_audience/test/helpers,~/Source/test_audience/test/mailers,~/Source/test_audience/test/models,~/Source/test_audience/spec,~/Source/test_audience/spec/controllers,~/Source/test_audience/spec/helpers,~/Source/test_audience/spec/mailers,~/Source/test_audience/spec/models,~/Source/test_audience/spec/views,~/Source/test_audience/spec/lib,~/Source/test_audience/spec/features,~/Source/test_audience/spec/requests,~/Source/test_audience/spec/integration,~/Source/test_audience/ven
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.rb
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'gemfilelock'
+setlocal syntax=gemfilelock
+endif
+setlocal tabstop=2
+setlocal tags=~/Source/test_audience/tags,~/Source/test_audience/tmp/tags,./tags,tags,~/.rvm/gems/ruby-2.2.1@global/gems/diff-lcs-1.2.5/tags,~/.rvm/gems/ruby-2.2.1@global/gems/rack-protection-1.5.3/tags,~/.rvm/gems/ruby-2.2.1@test_audience/bundler/gems/active_admin-36edd084f277/tags,~/.rvm/gems/ruby-2.2.1@test_audience/bundler/gems/best_in_place-dd5fa8f80ebf/tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 563 - ((30 * winheight(0) + 30) / 61)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+563
+normal! 06l
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :

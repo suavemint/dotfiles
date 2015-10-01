@@ -1,0 +1,125 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
+nnoremap <buffer> ? :norm h
+nnoremap <buffer> C :PluginClean!
+nnoremap <buffer> D :exec 'Delete'.getline('.')
+nnoremap <buffer> I :exec 'InstallAndRequire'.substitute(getline('.'), '^Plugin ', 'Plugin! ', '')
+nnoremap <buffer> R :call vundle#scripts#reload()
+nnoremap <buffer> add! :exec 'Install'.substitute(getline('.'), '^Plugin ', 'Plugin! ', '')
+nnoremap <buffer> add :exec 'Install'.getline('.')
+nnoremap <buffer> c :PluginClean
+nmap <buffer> gf <Plug>RailsFind
+nnoremap <buffer> h :h vundle
+nnoremap <buffer> i :exec 'InstallAndRequire'.getline('.')
+nnoremap <buffer> l :VundleLog
+nnoremap <buffer> q :silent bd!
+nnoremap <buffer> s :PluginSearch
+nnoremap <buffer> u :VundleChangelog
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal autoindent
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=nofile
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'vundle'
+setlocal filetype=vundle
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal nomodifiable
+setlocal nrformats=octal,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=pythoncomplete#Complete
+setlocal path=.,~/Source/lib,~/Source/vendor,~/Source/app/models/concerns,~/Source/app/controllers/concerns,~/Source/app/controllers,~/Source/app/helpers,~/Source/app/mailers,~/Source/app/models,~/Source/app/*,~/Source/app/views,~/Source/vendor/plugins/*/lib,~/Source/vendor/plugins/*/test,~/Source/vendor/rails/*/lib,~/Source/vendor/rails/*/test,~/Source,/usr/include,,~/.rvm/gems/ruby-2.1.5@audience/gems/binding_of_caller-0.7.2/lib,~/.rvm/gems/ruby-2.1.5@audience/gems/breadcrumbs_on_rails-2.3.0/lib,~/.rvm/gems/ruby-2.1.5@audience/gems/builder-3.2.2/lib,~/.rvm/gems/ruby-2.1.5@audience/gems/capistrano-passenger-0.0.5/lib,~/.rvm/gems/ruby-2.1.5@audience/gems/celluloid-0.16.0/lib,~/.rvm/gems/ruby-2.1.5@audience/gems/chronic-0.10.2/lib,~/.rvm/gems/ruby-2.1.5@audience/gems/coderay-1.1.0/lib,~/.rvm/gems/ruby-2.1.5@audience/gems/coffee-script-2.4.1/lib,~/.rvm/gems/ruby-2.1.5@audience/gems/debug_inspector-0.0.2/lib,~/.rvm/gems/ruby-2.1.5@audience/gems/erubis-2.7.0/lib,~/.rvm/gems/ruby-2.1.5@audience/gems/execjs-2.5.2/lib,~/.rvm/gem
+setlocal nopreserveindent
+setlocal previewwindow
+setlocal quoteescape=\\
+setlocal readonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.rb
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'vim'
+setlocal syntax=vim
+endif
+setlocal tabstop=2
+setlocal tags=~/Source/tags,~/Source/tmp/tags,./tags,tags,~/.rvm/gems/ruby-2.1.5@audience/gems/binding_of_caller-0.7.2/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/breadcrumbs_on_rails-2.3.0/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/builder-3.2.2/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/capistrano-passenger-0.0.5/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/celluloid-0.16.0/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/chronic-0.10.2/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/coderay-1.1.0/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/coffee-script-2.4.1/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/debug_inspector-0.0.2/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/erubis-2.7.0/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/execjs-2.5.2/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/hike-1.2.3/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/hitimes-1.2.2/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/i18n-0.7.0/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/method_source-0.8.2/tags,~/.rvm/gems/ruby-2.1.5@audience/gems/multi_json-1.11.0/tags,~/.rvm/gems/ruby-2.1.5@audi
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal winfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+let s:l = 5 - ((4 * winheight(0) + 25) / 50)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+5
+normal! 0
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :
